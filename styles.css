@@ -1,0 +1,518 @@
+/* ==========================================
+   ESTILOS ADICIONALES PARA WORDPRESS
+   Copia esto en: Apariencia > Personalizar > CSS Adicional
+   ========================================== */
+
+/* Scroll suave para toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Contenedor de Filtros del Portafolio */
+.filter-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+/* Botones de Filtro */
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid #8B2635;
+    color: #8B2635;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+    font-family: 'Lato', sans-serif;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #8B2635;
+    color: #FAF6F0;
+}
+
+/* Transición para los elementos del portafolio (Gutenberg Columns) */
+.portfolio-item {
+    transition: all 0.4s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Ocultar elementos filtrados */
+.portfolio-item.hide {
+    display: none !important;
+}
+
+/* Efectos hover sutiles en las imágenes (Opcional para dar toque premium) */
+.wp-block-image img {
+    transition: transform 0.4s ease;
+}
+.portfolio-item:hover .wp-block-image img {
+    transform: scale(1.05);
+}
+.portfolio-item .wp-block-image {
+    overflow: hidden;
+}
+
+/* Hover para botones genéricos de WordPress en tu diseño */
+.wp-block-button__link:hover {
+    background-color: #6B1D28 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(139, 38, 53, 0.3);
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN (HEADER)
+   ========================================== */
+.navbar-wp {
+    background-color: #6B1D28 !important; /* Rojo oscuro premium */
+    width: 100% !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Lato', sans-serif;
+    position: fixed !important;
+    top: 32px !important; /* 32px para compensar la barra de admin de WordPress */
+    left: 0 !important;
+    z-index: 9999 !important;
+}
+/* Cuando no hay barra de admin (usuario no logueado) */
+body:not(.admin-bar) .navbar-wp {
+    top: 0 !important;
+}
+.navbar-wp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+}
+.navbar-wp-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #FAF6F0;
+    text-decoration: none;
+}
+.navbar-wp-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar-wp-link {
+    color: #FAF6F0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.navbar-wp-link:hover, .navbar-wp-link.active {
+    border-bottom: 2px solid #FAF6F0;
+}
+/* Dropdown Proyectos */
+.navbar-wp-dropdown {
+    position: relative;
+}
+.navbar-wp-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    background-color: #FAF6F0;
+    min-width: 160px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+    list-style: none;
+    margin: 0;
+    z-index: 1001;
+}
+.navbar-wp-dropdown:hover .navbar-wp-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+.navbar-wp-dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #8B2635;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+.navbar-wp-dropdown-menu a:hover {
+    background-color: #8B2635;
+    color: #FAF6F0;
+}
+
+/* Menú Responsivo básico para pantallas chicas */
+@media (max-width: 768px) {
+    .navbar-wp-menu {
+        gap: 15px;
+    }
+    .navbar-wp-link {
+        font-size: 12px;
+    }
+}
+
+/* ==========================================
+   PORTAFOLIO NUEVO (MASONRY)
+   ========================================== */
+.portfolio-header-new {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+}
+@media (min-width: 768px) {
+    .portfolio-header-new {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+.portfolio-title-new {
+    max-width: 42rem;
+    margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+    .portfolio-title-new {
+        margin-bottom: 0;
+    }
+}
+.title-text-new {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #80202b;
+    margin: 0;
+}
+@media (min-width: 768px) {
+    .title-text-new {
+        font-size: 80px;
+    }
+}
+.title-text-new .block {
+    display: block;
+}
+.title-text-new .highlight-new {
+    color: #610617;
+    margin-left: 3rem;
+    font-style: italic;
+}
+
+.portfolio-filters-new {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+@media (min-width: 768px) {
+    .portfolio-filters-new {
+        justify-content: flex-end;
+    }
+}
+.filter-btn-new {
+    background-color: transparent;
+    color: #80202b;
+    border: 1px solid #80202b;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.filter-btn-new:hover {
+    background-color: #e7e2da;
+}
+.filter-btn-new.active {
+    background-color: #80202b;
+    color: #ffffff;
+}
+
+.masonry-grid-new {
+    column-count: 1;
+    column-gap: 2rem;
+    position: relative;
+}
+@media (min-width: 768px) {
+    .masonry-grid-new { column-count: 2; }
+}
+@media (min-width: 1024px) {
+    .masonry-grid-new { column-count: 3; }
+}
+.masonry-item-new {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+}
+.filtering-anim-new {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.filtered-out-new {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    position: absolute; 
+}
+.hide-masonry {
+    display: none !important;
+}
+.project-card-new {
+    position: relative;
+    background-color: #f2ede5;
+    border-radius: 0.5rem;
+    border: 1px solid #ddc0bf;
+    overflow: hidden;
+    cursor: pointer;
+}
+.project-bg-new {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.project-bg-text-new {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #564242;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+.project-bg-text-md {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+}
+.project-overlay-new {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(128, 32, 43, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.project-card-new:hover .project-overlay-new {
+    opacity: 1;
+}
+.project-title-new {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    transition: transform 0.5s ease-out;
+}
+.project-title-md {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+}
+.project-card-new:hover .project-title-new {
+    transform: translateY(-10px);
+}
+.project-tag-new {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffb3b4;
+    background-color: rgba(64, 0, 10, 0.3);
+    padding: 12px 24px;
+    border-radius: 9999px;
+}
+
+.project-icon {
+    font-size: 64px;
+    color: #564242;
+    opacity: 0.5;
+    margin-bottom: 1rem;
+}
+
+@keyframes fadeInUpNew {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up-new {
+    animation: fadeInUpNew 0.8s ease-out forwards;
+    opacity: 0;
+}
+.delay-100-new { animation-delay: 100ms; }
+.delay-200-new { animation-delay: 200ms; }
+.delay-300-new { animation-delay: 300ms; }
+.delay-400-new { animation-delay: 400ms; }
+.delay-500-new { animation-delay: 500ms; }
+.delay-600-new { animation-delay: 600ms; }
+.delay-700-new { animation-delay: 700ms; }
+.delay-800-new { animation-delay: 800ms; }
+
+/* ==========================================
+   SECCIÓN DE CONTACTO
+   ========================================== */
+.contact-grid-wp {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    background-color: #6B1D28;
+    padding: 60px;
+    border-radius: 4px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+}
+
+.contact-info-block-wp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FAF6F0;
+}
+
+.contact-logo-wp {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.contact-pitch-wp {
+    font-size: 16px;
+    margin-bottom: 35px;
+    opacity: 0.85;
+    max-width: 400px;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+}
+
+.social-links-wp {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links-wp a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(250, 246, 240, 0.1);
+    border-radius: 50%;
+    font-size: 18px;
+    color: #FAF6F0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links-wp a:hover {
+    background-color: #FAF6F0;
+    color: #8B2635;
+    transform: translateY(-3px);
+}
+
+.form-group-wp {
+    margin-bottom: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.form-group-wp label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    color: #FAF6F0;
+    opacity: 0.9;
+}
+
+.form-group-wp input, .form-group-wp textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: rgba(250, 246, 240, 0.08);
+    border: 1px solid rgba(250, 246, 240, 0.2);
+    border-radius: 4px;
+    color: #FAF6F0;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group-wp input::placeholder, .form-group-wp textarea::placeholder {
+    color: rgba(250, 246, 240, 0.4);
+}
+
+.form-group-wp input:focus, .form-group-wp textarea:focus {
+    outline: none;
+    background-color: rgba(250, 246, 240, 0.15);
+    border-color: #FAF6F0;
+}
+
+.submit-btn-wp {
+    width: 100%;
+    background-color: #FAF6F0;
+    color: #8B2635;
+    border: none;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.submit-btn-wp:hover {
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-response-msg-wp {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+@media (max-width: 992px) {
+    .contact-grid-wp {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px;
+    }
+}
