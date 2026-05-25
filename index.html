@@ -1,7 +1,96 @@
-<!-- Carga de fuentes adicionales para el Portafolio Masonry -->
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-    rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STARMIN - Portfolio Standalone</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Iconos de FontAwesome (necesarios para el botón de enviar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos Personalizados del usuario -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Mock de estilos básicos de WordPress (Gutenberg) para versión Standalone -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: #fef9f0; /* Color base */
+            overflow-x: hidden;
+        }
+        
+        /* Reset para los tags html y body de la navegación suave */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .alignfull {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+        
+        .alignwide {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .wp-block-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+        }
+        
+        .wp-block-column {
+            flex-basis: 100%; /* base mobile */
+        }
+        
+        @media (min-width: 782px) {
+            .wp-block-column {
+                flex-basis: 0;
+                flex-grow: 1;
+            }
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .wp-block-spacer {
+            clear: both;
+        }
+        
+        /* Ajuste para que los inputs no se salgan en desktop */
+        .wp-block-button__link {
+            cursor: pointer;
+            border: none;
+        }
+        
+        .wp-block-button__link:hover {
+            opacity: 0.9;
+        }
+        
+        /* Reseteo de márgenes de encabezados */
+        h1, h2, h3, h4, h5, h6, p {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
 
 <div class="navbar-wp">
     <div class="navbar-wp-container">
@@ -747,3 +836,8 @@
         </div>
     </div>
 </div>
+
+    <!-- Script de interacciones -->
+    <script src="script.js"></script>
+</body>
+</html>
